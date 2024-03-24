@@ -1,0 +1,24 @@
+{
+  "name": "elysia-drizzle",
+  "version": "1.0.50",
+  "scripts": {
+    "db:generate": "drizzle-kit generate:mysql --schema ./src/db/schema/index.ts --out=./src/db/migrations",
+    "db:migrate": "bun run ./src/db/migrate.ts",
+    "format": "bunx @biomejs/biome format ./src --write",
+    "lint": "bunx @biomejs/biome lint ./src",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "@planetscale/database": "^1.16.0",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.4",
+    "drizzle-typebox": "^0.1.1",
+    "elysia": "latest",
+    "mysql2": "^3.9.2"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.14"
+  },
+  "module": "src/index.js"
+}
